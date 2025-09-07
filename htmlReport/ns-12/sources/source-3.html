@@ -1,0 +1,230 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > HomeViewModel</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.ui.screens.home</a>
+</div>
+
+<h1>Coverage Summary for Class: HomeViewModel (com.junior.contatosjetpackmvvmhilt.ui.screens.home)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">HomeViewModel</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/18)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">HomeViewModel$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">HomeViewModel$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/23)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.ui.screens.home
+&nbsp;
+&nbsp;import androidx.lifecycle.ViewModel
+&nbsp;import androidx.lifecycle.viewModelScope
+&nbsp;import com.junior.contatosjetpackmvvmhilt.data.model.Contact
+&nbsp;import com.junior.contatosjetpackmvvmhilt.data.usecase.GetAllContactsUseCase
+&nbsp;import dagger.hilt.android.lifecycle.HiltViewModel
+&nbsp;import jakarta.inject.Inject
+&nbsp;import kotlinx.coroutines.flow.MutableStateFlow
+&nbsp;import kotlinx.coroutines.flow.StateFlow
+&nbsp;import kotlinx.coroutines.launch
+&nbsp;
+&nbsp;@HiltViewModel
+<b class="nc">&nbsp;class HomeViewModel@Inject constructor(private val getAllContactsUseCase: GetAllContactsUseCase): ViewModel() {</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;   private val _uiState = MutableStateFlow(HomeUIState())</b>
+<b class="nc">&nbsp;   val uiState: StateFlow&lt;HomeUIState&gt; = _uiState</b>
+&nbsp;
+<b class="nc">&nbsp;   init {</b>
+<b class="nc">&nbsp;       viewModelScope.launch {</b>
+<b class="nc">&nbsp;          getAllContactsUseCase().collect { contacts-&gt;</b>
+&nbsp;
+<b class="nc">&nbsp;             _uiState.value = _uiState.value.copy(</b>
+<b class="nc">&nbsp;                isLoading = false,</b>
+<b class="nc">&nbsp;                contacts = filterContacts(_uiState.value.query, contacts),</b>
+<b class="nc">&nbsp;                allContacts = contacts</b>
+&nbsp;             )
+&nbsp;          }
+&nbsp;       }
+<b class="nc">&nbsp;   }</b>
+&nbsp;
+&nbsp;   fun onQueryChange(newQuery: String){
+<b class="nc">&nbsp;      _uiState.value = _uiState.value.copy(</b>
+<b class="nc">&nbsp;         query = newQuery,</b>
+<b class="nc">&nbsp;         contacts = filterContacts(newQuery, _uiState.value.allContacts)</b>
+&nbsp;      )
+&nbsp;   }
+&nbsp;
+&nbsp;   private fun filterContacts(query: String, contacts: List&lt;Contact&gt;): List&lt;Contact&gt;{
+<b class="nc">&nbsp;      if (query.isBlank()) return contacts</b>
+<b class="nc">&nbsp;      return contacts.filter {</b>
+<b class="nc">&nbsp;         it.name.contains(query, ignoreCase = true) || it.phone.contains(query)</b>
+&nbsp;      }
+&nbsp;
+&nbsp;   }
+&nbsp;
+&nbsp;   fun startSearch(){
+<b class="nc">&nbsp;      _uiState.value = _uiState.value.copy(</b>
+<b class="nc">&nbsp;         isSearching = true</b>
+&nbsp;      )
+&nbsp;   }
+&nbsp;
+&nbsp;   fun closeSearch(){
+<b class="nc">&nbsp;      _uiState.value = _uiState.value.copy(</b>
+<b class="nc">&nbsp;         isSearching = false,</b>
+<b class="nc">&nbsp;         query = &quot;&quot;,</b>
+<b class="nc">&nbsp;         contacts = _uiState.value.allContacts</b>
+&nbsp;      )
+&nbsp;   }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>

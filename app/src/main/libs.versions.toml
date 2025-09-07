@@ -1,0 +1,11 @@
+toml
+[versions]
+// ... outras versões
+hilt = "2.51" // Ou mantenha 2.52 se a próxima sugestão não funcionar
+ksp = "2.0.0-1.0.21" // Exemplo de versão anterior do KSP
+// ...
+
+[plugins]
+// ...
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" } // Garanta que está usando a referência
+        

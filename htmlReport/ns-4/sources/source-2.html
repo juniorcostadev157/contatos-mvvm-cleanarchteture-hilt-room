@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > AppDataBase_Impl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.data.datasource.local</a>
+</div>
+
+<h1>Coverage Summary for Class: AppDataBase_Impl (com.junior.contatosjetpackmvvmhilt.data.datasource.local)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AppDataBase_Impl</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">AppDataBase_Impl$createOpenDelegate$_openDelegate$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/39)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/17)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/56)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.`data`.datasource.local
+&nbsp;
+&nbsp;import androidx.room.InvalidationTracker
+&nbsp;import androidx.room.RoomOpenDelegate
+&nbsp;import androidx.room.migration.AutoMigrationSpec
+&nbsp;import androidx.room.migration.Migration
+&nbsp;import androidx.room.util.TableInfo
+&nbsp;import androidx.room.util.TableInfo.Companion.read
+&nbsp;import androidx.room.util.dropFtsSyncTriggers
+&nbsp;import androidx.sqlite.SQLiteConnection
+&nbsp;import androidx.sqlite.execSQL
+&nbsp;import com.junior.contatosjetpackmvvmhilt.`data`.datasource.local.dao.ContactDao
+&nbsp;import com.junior.contatosjetpackmvvmhilt.`data`.datasource.local.dao.ContactDao_Impl
+&nbsp;import javax.`annotation`.processing.Generated
+&nbsp;import kotlin.Lazy
+&nbsp;import kotlin.String
+&nbsp;import kotlin.Suppress
+&nbsp;import kotlin.collections.List
+&nbsp;import kotlin.collections.Map
+&nbsp;import kotlin.collections.MutableList
+&nbsp;import kotlin.collections.MutableMap
+&nbsp;import kotlin.collections.MutableSet
+&nbsp;import kotlin.collections.Set
+&nbsp;import kotlin.collections.mutableListOf
+&nbsp;import kotlin.collections.mutableMapOf
+&nbsp;import kotlin.collections.mutableSetOf
+&nbsp;import kotlin.reflect.KClass
+&nbsp;
+&nbsp;@Generated(value = [&quot;androidx.room.RoomProcessor&quot;])
+&nbsp;@Suppress(names = [&quot;UNCHECKED_CAST&quot;, &quot;DEPRECATION&quot;, &quot;REDUNDANT_PROJECTION&quot;, &quot;REMOVAL&quot;])
+<b class="nc">&nbsp;public class AppDataBase_Impl : AppDataBase() {</b>
+<b class="nc">&nbsp;  private val _contactDao: Lazy&lt;ContactDao&gt; = lazy {</b>
+<b class="nc">&nbsp;    ContactDao_Impl(this)</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  protected override fun createOpenDelegate(): RoomOpenDelegate {
+<b class="nc">&nbsp;    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(3,</b>
+<b class="nc">&nbsp;        &quot;980dbfbd10e652743248eccb7c1fea56&quot;, &quot;fb0addb8394d6952a43f922aafec38bb&quot;) {</b>
+&nbsp;      public override fun createAllTables(connection: SQLiteConnection) {
+<b class="nc">&nbsp;        connection.execSQL(&quot;CREATE TABLE IF NOT EXISTS `contacts` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `phone` TEXT NOT NULL, `complemento` TEXT NOT NULL, `cep` TEXT NOT NULL, `localidade` TEXT NOT NULL, `bairro` TEXT NOT NULL, `estado` TEXT NOT NULL, `logradouro` TEXT NOT NULL)&quot;)</b>
+<b class="nc">&nbsp;        connection.execSQL(&quot;CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)&quot;)</b>
+<b class="nc">&nbsp;        connection.execSQL(&quot;INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, &#39;980dbfbd10e652743248eccb7c1fea56&#39;)&quot;)</b>
+&nbsp;      }
+&nbsp;
+&nbsp;      public override fun dropAllTables(connection: SQLiteConnection) {
+<b class="nc">&nbsp;        connection.execSQL(&quot;DROP TABLE IF EXISTS `contacts`&quot;)</b>
+&nbsp;      }
+&nbsp;
+&nbsp;      public override fun onCreate(connection: SQLiteConnection) {
+<b class="nc">&nbsp;      }</b>
+&nbsp;
+&nbsp;      public override fun onOpen(connection: SQLiteConnection) {
+<b class="nc">&nbsp;        internalInitInvalidationTracker(connection)</b>
+&nbsp;      }
+&nbsp;
+&nbsp;      public override fun onPreMigrate(connection: SQLiteConnection) {
+<b class="nc">&nbsp;        dropFtsSyncTriggers(connection)</b>
+&nbsp;      }
+&nbsp;
+&nbsp;      public override fun onPostMigrate(connection: SQLiteConnection) {
+<b class="nc">&nbsp;      }</b>
+&nbsp;
+&nbsp;      public override fun onValidateSchema(connection: SQLiteConnection):
+&nbsp;          RoomOpenDelegate.ValidationResult {
+<b class="nc">&nbsp;        val _columnsContacts: MutableMap&lt;String, TableInfo.Column&gt; = mutableMapOf()</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;id&quot;, TableInfo.Column(&quot;id&quot;, &quot;INTEGER&quot;, true, 1, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;name&quot;, TableInfo.Column(&quot;name&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;phone&quot;, TableInfo.Column(&quot;phone&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;complemento&quot;, TableInfo.Column(&quot;complemento&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;cep&quot;, TableInfo.Column(&quot;cep&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;localidade&quot;, TableInfo.Column(&quot;localidade&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;bairro&quot;, TableInfo.Column(&quot;bairro&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;estado&quot;, TableInfo.Column(&quot;estado&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        _columnsContacts.put(&quot;logradouro&quot;, TableInfo.Column(&quot;logradouro&quot;, &quot;TEXT&quot;, true, 0, null,</b>
+<b class="nc">&nbsp;            TableInfo.CREATED_FROM_ENTITY))</b>
+<b class="nc">&nbsp;        val _foreignKeysContacts: MutableSet&lt;TableInfo.ForeignKey&gt; = mutableSetOf()</b>
+<b class="nc">&nbsp;        val _indicesContacts: MutableSet&lt;TableInfo.Index&gt; = mutableSetOf()</b>
+<b class="nc">&nbsp;        val _infoContacts: TableInfo = TableInfo(&quot;contacts&quot;, _columnsContacts, _foreignKeysContacts,</b>
+<b class="nc">&nbsp;            _indicesContacts)</b>
+<b class="nc">&nbsp;        val _existingContacts: TableInfo = read(connection, &quot;contacts&quot;)</b>
+<b class="nc">&nbsp;        if (!_infoContacts.equals(_existingContacts)) {</b>
+<b class="nc">&nbsp;          return RoomOpenDelegate.ValidationResult(false, &quot;&quot;&quot;</b>
+&nbsp;              |contacts(com.junior.contatosjetpackmvvmhilt.data.datasource.local.ContactEntity).
+&nbsp;              | Expected:
+<b class="nc">&nbsp;              |&quot;&quot;&quot;.trimMargin() + _infoContacts + &quot;&quot;&quot;</b>
+&nbsp;              |
+&nbsp;              | Found:
+<b class="nc">&nbsp;              |&quot;&quot;&quot;.trimMargin() + _existingContacts)</b>
+&nbsp;        }
+<b class="nc">&nbsp;        return RoomOpenDelegate.ValidationResult(true, null)</b>
+&nbsp;      }
+&nbsp;    }
+<b class="nc">&nbsp;    return _openDelegate</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  protected override fun createInvalidationTracker(): InvalidationTracker {
+<b class="nc">&nbsp;    val _shadowTablesMap: MutableMap&lt;String, String&gt; = mutableMapOf()</b>
+<b class="nc">&nbsp;    val _viewTables: MutableMap&lt;String, Set&lt;String&gt;&gt; = mutableMapOf()</b>
+<b class="nc">&nbsp;    return InvalidationTracker(this, _shadowTablesMap, _viewTables, &quot;contacts&quot;)</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  public override fun clearAllTables() {
+<b class="nc">&nbsp;    super.performClear(false, &quot;contacts&quot;)</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  protected override fun getRequiredTypeConverterClasses(): Map&lt;KClass&lt;*&gt;, List&lt;KClass&lt;*&gt;&gt;&gt; {
+<b class="nc">&nbsp;    val _typeConvertersMap: MutableMap&lt;KClass&lt;*&gt;, List&lt;KClass&lt;*&gt;&gt;&gt; = mutableMapOf()</b>
+<b class="nc">&nbsp;    _typeConvertersMap.put(ContactDao::class, ContactDao_Impl.getRequiredConverters())</b>
+<b class="nc">&nbsp;    return _typeConvertersMap</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  public override fun getRequiredAutoMigrationSpecClasses(): Set&lt;KClass&lt;out AutoMigrationSpec&gt;&gt; {
+<b class="nc">&nbsp;    val _autoMigrationSpecsSet: MutableSet&lt;KClass&lt;out AutoMigrationSpec&gt;&gt; = mutableSetOf()</b>
+<b class="nc">&nbsp;    return _autoMigrationSpecsSet</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  public override
+&nbsp;      fun createAutoMigrations(autoMigrationSpecs: Map&lt;KClass&lt;out AutoMigrationSpec&gt;, AutoMigrationSpec&gt;):
+&nbsp;      List&lt;Migration&gt; {
+<b class="nc">&nbsp;    val _autoMigrations: MutableList&lt;Migration&gt; = mutableListOf()</b>
+<b class="nc">&nbsp;    return _autoMigrations</b>
+&nbsp;  }
+&nbsp;
+<b class="nc">&nbsp;  public override fun contactDao(): ContactDao = _contactDao.value</b>
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>

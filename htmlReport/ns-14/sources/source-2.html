@@ -1,0 +1,168 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ThemeKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.ui.theme</a>
+</div>
+
+<h1>Coverage Summary for Class: ThemeKt (com.junior.contatosjetpackmvvmhilt.ui.theme)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ThemeKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/21)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.ui.theme
+&nbsp;
+&nbsp;import android.app.Activity
+&nbsp;import android.os.Build
+&nbsp;import androidx.compose.foundation.isSystemInDarkTheme
+&nbsp;import androidx.compose.material3.MaterialTheme
+&nbsp;import androidx.compose.material3.darkColorScheme
+&nbsp;import androidx.compose.material3.dynamicDarkColorScheme
+&nbsp;import androidx.compose.material3.dynamicLightColorScheme
+&nbsp;import androidx.compose.material3.lightColorScheme
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;
+<b class="nc">&nbsp;private val DarkColorScheme = darkColorScheme(</b>
+<b class="nc">&nbsp;    primary = Purple80,</b>
+<b class="nc">&nbsp;    secondary = PurpleGrey80,</b>
+<b class="nc">&nbsp;    tertiary = Pink80</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;private val AppColorScheme = lightColorScheme(</b>
+<b class="nc">&nbsp;    primary = White,   // usado no TopBar, FAB, botões</b>
+<b class="nc">&nbsp;    onPrimary = NavyBlue,    // cor do texto/ícone em cima do primary</b>
+<b class="nc">&nbsp;    background = White,   // fundo da tela</b>
+<b class="nc">&nbsp;    surface = NavyBlue,      // fundo dos cards/áreas</b>
+<b class="nc">&nbsp;    onBackground = White,</b>
+<b class="nc">&nbsp;    onSurface = White</b>
+&nbsp;)
+&nbsp;
+<b class="nc">&nbsp;private val LightColorScheme = lightColorScheme(</b>
+<b class="nc">&nbsp;    primary = Purple40,</b>
+<b class="nc">&nbsp;    secondary = PurpleGrey40,</b>
+<b class="nc">&nbsp;    tertiary = Pink40</b>
+&nbsp;
+&nbsp;    /* Other default colors to override
+&nbsp;    background = Color(0xFFFFFBFE),
+&nbsp;    surface = Color(0xFFFFFBFE),
+&nbsp;    onPrimary = Color.White,
+&nbsp;    onSecondary = Color.White,
+&nbsp;    onTertiary = Color.White,
+&nbsp;    onBackground = Color(0xFF1C1B1F),
+&nbsp;    onSurface = Color(0xFF1C1B1F),
+&nbsp;    */
+&nbsp;)
+&nbsp;
+&nbsp;@Composable
+<b class="nc">&nbsp;fun ContatosJetPackMVVMHiltTheme(content: @Composable () -&gt; Unit) {</b>
+<b class="nc">&nbsp;    MaterialTheme(</b>
+<b class="nc">&nbsp;        colorScheme = AppColorScheme,</b>
+<b class="nc">&nbsp;        typography = Typography,</b>
+<b class="nc">&nbsp;        content = content</b>
+&nbsp;    )
+<b class="nc">&nbsp;}</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,428 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > AddContactScreenKt</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.ui.screens.add_contact</a>
+</div>
+
+<h1>Coverage Summary for Class: AddContactScreenKt (com.junior.contatosjetpackmvvmhilt.ui.screens.add_contact)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AddContactScreenKt</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/158)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">AddContactScreenKt$AddContactScreen$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">AddContactScreenKt$AddContactScreen$1$1$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/15)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/164)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.ui.screens.add_contact
+&nbsp;
+&nbsp;import android.widget.Toast
+&nbsp;import androidx.compose.foundation.layout.Column
+&nbsp;import androidx.compose.foundation.layout.Spacer
+&nbsp;import androidx.compose.foundation.layout.fillMaxSize
+&nbsp;import androidx.compose.foundation.layout.fillMaxWidth
+&nbsp;import androidx.compose.foundation.layout.height
+&nbsp;import androidx.compose.foundation.layout.padding
+&nbsp;import androidx.compose.foundation.text.KeyboardOptions
+&nbsp;import androidx.compose.material3.Button
+&nbsp;import androidx.compose.material3.ButtonDefaults
+&nbsp;import androidx.compose.material3.OutlinedTextField
+&nbsp;import androidx.compose.material3.Text
+&nbsp;import androidx.compose.material3.TextFieldDefaults
+&nbsp;import androidx.compose.runtime.Composable
+&nbsp;import androidx.compose.runtime.LaunchedEffect
+&nbsp;import androidx.compose.runtime.collectAsState
+&nbsp;import androidx.compose.runtime.getValue
+&nbsp;import androidx.compose.ui.Alignment
+&nbsp;import androidx.compose.ui.Modifier
+&nbsp;import androidx.compose.ui.platform.LocalContext
+&nbsp;import androidx.compose.ui.text.input.KeyboardType
+&nbsp;import androidx.compose.ui.unit.dp
+&nbsp;import androidx.hilt.navigation.compose.hiltViewModel
+&nbsp;import com.junior.contatosjetpackmvvmhilt.data.model.Contact
+&nbsp;import com.junior.contatosjetpackmvvmhilt.core.contants.Constants
+&nbsp;import com.junior.contatosjetpackmvvmhilt.core.utils.PhoneVisualTransformation
+&nbsp;import com.junior.contatosjetpackmvvmhilt.ui.theme.NavyBlue
+&nbsp;import com.junior.contatosjetpackmvvmhilt.ui.theme.White
+&nbsp;
+<b class="nc">&nbsp;@Composable</b>
+<b class="nc">&nbsp;fun AddContactScreen(onBackClick: () -&gt; Unit, viewModel: AddContactViewModel = hiltViewModel()){</b>
+&nbsp;
+<b class="nc">&nbsp;    val name by viewModel.name.collectAsState()</b>
+<b class="nc">&nbsp;    val phone by viewModel.phone.collectAsState()</b>
+<b class="nc">&nbsp;    val complemento by viewModel.complemento.collectAsState()</b>
+<b class="nc">&nbsp;    val cep by viewModel.cep.collectAsState()</b>
+<b class="nc">&nbsp;    val logradouro by viewModel.logradouro.collectAsState()</b>
+<b class="nc">&nbsp;    val bairro by viewModel.bairro.collectAsState()</b>
+<b class="nc">&nbsp;    val localidade by viewModel.localidade.collectAsState()</b>
+<b class="nc">&nbsp;    val estado by viewModel.estado.collectAsState()</b>
+&nbsp;
+<b class="nc">&nbsp;    val eventFlow = viewModel.eventFlow</b>
+<b class="nc">&nbsp;    val context = LocalContext.current</b>
+&nbsp;
+<b class="nc">&nbsp;    LaunchedEffect(true) {</b>
+<b class="nc">&nbsp;        eventFlow.collect { event-&gt;</b>
+<b class="nc">&nbsp;           when(event){</b>
+&nbsp;               Constants.MESSAGE.MESSAGE_SUCCESS_INSERT -&gt; {
+<b class="nc">&nbsp;                   Toast.makeText(context, event, Toast.LENGTH_SHORT).show()</b>
+<b class="nc">&nbsp;                   onBackClick()</b>
+&nbsp;               }
+&nbsp;
+&nbsp;               Constants.MESSAGE.MESSAGE_EMPTY_FIELDS-&gt;{
+<b class="nc">&nbsp;                   Toast.makeText(context, event, Toast.LENGTH_SHORT).show()</b>
+&nbsp;               }
+&nbsp;
+&nbsp;               Constants.MESSAGE.MESSAGE_EXISTS_CONTACT-&gt;{
+<b class="nc">&nbsp;                   Toast.makeText(context, event, Toast.LENGTH_SHORT).show()</b>
+&nbsp;               }
+&nbsp;
+&nbsp;           }
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    Column(</b>
+<b class="nc">&nbsp;        modifier = Modifier.fillMaxSize().padding(8.dp),</b>
+<b class="nc">&nbsp;        horizontalAlignment = Alignment.CenterHorizontally</b>
+&nbsp;    ){
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = name,</b>
+<b class="nc">&nbsp;            onValueChange = {viewModel.setName(it)},</b>
+&nbsp;            label = { Text(text = Constants.Text.NAME)},
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;        )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(8.dp))</b>
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = phone,</b>
+<b class="nc">&nbsp;            onValueChange = {input-&gt;</b>
+<b class="nc">&nbsp;                val onlyDigits = input.filter { it.isDigit() }</b>
+<b class="nc">&nbsp;                viewModel.setPhone(onlyDigits)},</b>
+&nbsp;            label = {Text(Constants.Text.PHONE)},
+<b class="nc">&nbsp;            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),</b>
+<b class="nc">&nbsp;            visualTransformation = PhoneVisualTransformation(),</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(8.dp))</b>
+&nbsp;
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = cep</b>
+&nbsp;            ,
+<b class="nc">&nbsp;            onValueChange = {viewModel.setCep(it)},</b>
+&nbsp;            label = {Text(Constants.Text.CEP)},
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(16.dp))</b>
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = logradouro</b>
+&nbsp;            ,
+<b class="nc">&nbsp;            onValueChange = {},</b>
+&nbsp;            label = {Text(Constants.Text.LOGRADOURO)},
+<b class="nc">&nbsp;            readOnly = true,</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(8.dp))</b>
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = complemento,</b>
+<b class="nc">&nbsp;            onValueChange = {viewModel.setComplemento(it)},</b>
+&nbsp;            label = {Text(Constants.Text.COMPLEMENTO)},
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;
+&nbsp;        )
+&nbsp;
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(16.dp))</b>
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = bairro</b>
+&nbsp;            ,
+<b class="nc">&nbsp;            onValueChange = {},</b>
+&nbsp;            label = {Text(Constants.Text.BAIRRO)},
+<b class="nc">&nbsp;            readOnly = true,</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(16.dp))</b>
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = localidade</b>
+&nbsp;            ,
+<b class="nc">&nbsp;            onValueChange = {},</b>
+&nbsp;            label = {Text(Constants.Text.LOCALIDADE)},
+<b class="nc">&nbsp;            readOnly = true,</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(16.dp))</b>
+&nbsp;
+<b class="nc">&nbsp;        OutlinedTextField(</b>
+<b class="nc">&nbsp;            value = estado</b>
+&nbsp;            ,
+<b class="nc">&nbsp;            onValueChange = {},</b>
+&nbsp;            label = {Text(Constants.Text.ESTADO)},
+<b class="nc">&nbsp;            readOnly = true,</b>
+<b class="nc">&nbsp;            modifier = Modifier.fillMaxWidth(),</b>
+<b class="nc">&nbsp;            colors = TextFieldDefaults.colors(</b>
+<b class="nc">&nbsp;                focusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedTextColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedContainerColor = White,</b>
+<b class="nc">&nbsp;                unfocusedContainerColor = White,</b>
+<b class="nc">&nbsp;                focusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedIndicatorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                cursorColor = NavyBlue,</b>
+<b class="nc">&nbsp;                focusedLabelColor = NavyBlue,</b>
+<b class="nc">&nbsp;                unfocusedLabelColor = NavyBlue</b>
+&nbsp;            )
+&nbsp;        )
+<b class="nc">&nbsp;        Spacer(modifier = Modifier.height(16.dp))</b>
+&nbsp;
+<b class="nc">&nbsp;        Button(onClick = {</b>
+<b class="nc">&nbsp;            val contact = Contact(</b>
+<b class="nc">&nbsp;                name = name,</b>
+<b class="nc">&nbsp;                phone = phone,</b>
+<b class="nc">&nbsp;                complemento = complemento,</b>
+<b class="nc">&nbsp;                cep = cep,</b>
+<b class="nc">&nbsp;                logradouro = logradouro,</b>
+<b class="nc">&nbsp;                bairro = bairro,</b>
+<b class="nc">&nbsp;                localidade = localidade,</b>
+<b class="nc">&nbsp;                estado= estado</b>
+&nbsp;            )
+<b class="nc">&nbsp;            viewModel.insertContact(contact)</b>
+&nbsp;
+<b class="nc">&nbsp;        }, colors = ButtonDefaults.buttonColors(containerColor = NavyBlue)) {Text(&quot;Salvar&quot;, color = White) }</b>
+&nbsp;
+&nbsp;
+<b class="nc">&nbsp;        }</b>
+&nbsp;
+<b class="nc">&nbsp;    }</b>
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>

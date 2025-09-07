@@ -1,0 +1,445 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ContactDao_Impl</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: ContactDao_Impl (com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Branch, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ContactDao_Impl</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/13)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/132)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ContactDao_Impl$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ContactDao_Impl$2</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ContactDao_Impl$3</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/12)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">ContactDao_Impl$Companion</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/23)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/159)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.`data`.datasource.local.dao
+&nbsp;
+&nbsp;import androidx.room.EntityDeleteOrUpdateAdapter
+&nbsp;import androidx.room.EntityInsertAdapter
+&nbsp;import androidx.room.RoomDatabase
+&nbsp;import androidx.room.coroutines.createFlow
+&nbsp;import androidx.room.util.getColumnIndexOrThrow
+&nbsp;import androidx.room.util.performSuspending
+&nbsp;import androidx.sqlite.SQLiteStatement
+&nbsp;import com.junior.contatosjetpackmvvmhilt.`data`.datasource.local.ContactEntity
+&nbsp;import javax.`annotation`.processing.Generated
+&nbsp;import kotlin.Int
+&nbsp;import kotlin.String
+&nbsp;import kotlin.Suppress
+&nbsp;import kotlin.Unit
+&nbsp;import kotlin.collections.List
+&nbsp;import kotlin.collections.MutableList
+&nbsp;import kotlin.collections.mutableListOf
+&nbsp;import kotlin.reflect.KClass
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;
+&nbsp;@Generated(value = [&quot;androidx.room.RoomProcessor&quot;])
+&nbsp;@Suppress(names = [&quot;UNCHECKED_CAST&quot;, &quot;DEPRECATION&quot;, &quot;REDUNDANT_PROJECTION&quot;, &quot;REMOVAL&quot;])
+<b class="nc">&nbsp;public class ContactDao_Impl(</b>
+&nbsp;  __db: RoomDatabase,
+&nbsp;) : ContactDao {
+&nbsp;  private val __db: RoomDatabase
+&nbsp;
+&nbsp;  private val __insertAdapterOfContactEntity: EntityInsertAdapter&lt;ContactEntity&gt;
+&nbsp;
+&nbsp;  private val __deleteAdapterOfContactEntity: EntityDeleteOrUpdateAdapter&lt;ContactEntity&gt;
+&nbsp;
+&nbsp;  private val __updateAdapterOfContactEntity: EntityDeleteOrUpdateAdapter&lt;ContactEntity&gt;
+<b class="nc">&nbsp;  init {</b>
+<b class="nc">&nbsp;    this.__db = __db</b>
+<b class="nc">&nbsp;    this.__insertAdapterOfContactEntity = object : EntityInsertAdapter&lt;ContactEntity&gt;() {</b>
+&nbsp;      protected override fun createQuery(): String =
+<b class="nc">&nbsp;          &quot;INSERT OR ABORT INTO `contacts` (`id`,`name`,`phone`,`complemento`,`cep`,`localidade`,`bairro`,`estado`,`logradouro`) VALUES (nullif(?, 0),?,?,?,?,?,?,?,?)&quot;</b>
+&nbsp;
+&nbsp;      protected override fun bind(statement: SQLiteStatement, entity: ContactEntity) {
+<b class="nc">&nbsp;        statement.bindLong(1, entity.id.toLong())</b>
+<b class="nc">&nbsp;        statement.bindText(2, entity.name)</b>
+<b class="nc">&nbsp;        statement.bindText(3, entity.phone)</b>
+<b class="nc">&nbsp;        statement.bindText(4, entity.complemento)</b>
+<b class="nc">&nbsp;        statement.bindText(5, entity.cep)</b>
+<b class="nc">&nbsp;        statement.bindText(6, entity.localidade)</b>
+<b class="nc">&nbsp;        statement.bindText(7, entity.bairro)</b>
+<b class="nc">&nbsp;        statement.bindText(8, entity.estado)</b>
+<b class="nc">&nbsp;        statement.bindText(9, entity.logradouro)</b>
+&nbsp;      }
+&nbsp;    }
+<b class="nc">&nbsp;    this.__deleteAdapterOfContactEntity = object : EntityDeleteOrUpdateAdapter&lt;ContactEntity&gt;() {</b>
+<b class="nc">&nbsp;      protected override fun createQuery(): String = &quot;DELETE FROM `contacts` WHERE `id` = ?&quot;</b>
+&nbsp;
+&nbsp;      protected override fun bind(statement: SQLiteStatement, entity: ContactEntity) {
+<b class="nc">&nbsp;        statement.bindLong(1, entity.id.toLong())</b>
+&nbsp;      }
+&nbsp;    }
+<b class="nc">&nbsp;    this.__updateAdapterOfContactEntity = object : EntityDeleteOrUpdateAdapter&lt;ContactEntity&gt;() {</b>
+&nbsp;      protected override fun createQuery(): String =
+<b class="nc">&nbsp;          &quot;UPDATE OR ABORT `contacts` SET `id` = ?,`name` = ?,`phone` = ?,`complemento` = ?,`cep` = ?,`localidade` = ?,`bairro` = ?,`estado` = ?,`logradouro` = ? WHERE `id` = ?&quot;</b>
+&nbsp;
+&nbsp;      protected override fun bind(statement: SQLiteStatement, entity: ContactEntity) {
+<b class="nc">&nbsp;        statement.bindLong(1, entity.id.toLong())</b>
+<b class="nc">&nbsp;        statement.bindText(2, entity.name)</b>
+<b class="nc">&nbsp;        statement.bindText(3, entity.phone)</b>
+<b class="nc">&nbsp;        statement.bindText(4, entity.complemento)</b>
+<b class="nc">&nbsp;        statement.bindText(5, entity.cep)</b>
+<b class="nc">&nbsp;        statement.bindText(6, entity.localidade)</b>
+<b class="nc">&nbsp;        statement.bindText(7, entity.bairro)</b>
+<b class="nc">&nbsp;        statement.bindText(8, entity.estado)</b>
+<b class="nc">&nbsp;        statement.bindText(9, entity.logradouro)</b>
+<b class="nc">&nbsp;        statement.bindLong(10, entity.id.toLong())</b>
+&nbsp;      }
+&nbsp;    }
+<b class="nc">&nbsp;  }</b>
+&nbsp;
+<b class="nc">&nbsp;  public override suspend fun insert(contact: ContactEntity): Unit = performSuspending(__db, false,</b>
+<b class="nc">&nbsp;      true) { _connection -&gt;</b>
+<b class="nc">&nbsp;    __insertAdapterOfContactEntity.insert(_connection, contact)</b>
+&nbsp;  }
+&nbsp;
+<b class="nc">&nbsp;  public override suspend fun delete(contact: ContactEntity): Unit = performSuspending(__db, false,</b>
+<b class="nc">&nbsp;      true) { _connection -&gt;</b>
+<b class="nc">&nbsp;    __deleteAdapterOfContactEntity.handle(_connection, contact)</b>
+&nbsp;  }
+&nbsp;
+<b class="nc">&nbsp;  public override suspend fun update(contact: ContactEntity): Unit = performSuspending(__db, false,</b>
+<b class="nc">&nbsp;      true) { _connection -&gt;</b>
+<b class="nc">&nbsp;    __updateAdapterOfContactEntity.handle(_connection, contact)</b>
+&nbsp;  }
+&nbsp;
+&nbsp;  public override fun getAllContacts(): Flow&lt;List&lt;ContactEntity&gt;&gt; {
+<b class="nc">&nbsp;    val _sql: String = &quot;SELECT * FROM contacts ORDER BY id ASC&quot;</b>
+<b class="nc">&nbsp;    return createFlow(__db, false, arrayOf(&quot;contacts&quot;)) { _connection -&gt;</b>
+<b class="nc">&nbsp;      val _stmt: SQLiteStatement = _connection.prepare(_sql)</b>
+&nbsp;      try {
+<b class="nc">&nbsp;        val _columnIndexOfId: Int = getColumnIndexOrThrow(_stmt, &quot;id&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfName: Int = getColumnIndexOrThrow(_stmt, &quot;name&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfPhone: Int = getColumnIndexOrThrow(_stmt, &quot;phone&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfComplemento: Int = getColumnIndexOrThrow(_stmt, &quot;complemento&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfCep: Int = getColumnIndexOrThrow(_stmt, &quot;cep&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLocalidade: Int = getColumnIndexOrThrow(_stmt, &quot;localidade&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfBairro: Int = getColumnIndexOrThrow(_stmt, &quot;bairro&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfEstado: Int = getColumnIndexOrThrow(_stmt, &quot;estado&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLogradouro: Int = getColumnIndexOrThrow(_stmt, &quot;logradouro&quot;)</b>
+<b class="nc">&nbsp;        val _result: MutableList&lt;ContactEntity&gt; = mutableListOf()</b>
+<b class="nc">&nbsp;        while (_stmt.step()) {</b>
+<b class="nc">&nbsp;          val _item: ContactEntity</b>
+<b class="nc">&nbsp;          val _tmpId: Int</b>
+<b class="nc">&nbsp;          _tmpId = _stmt.getLong(_columnIndexOfId).toInt()</b>
+<b class="nc">&nbsp;          val _tmpName: String</b>
+<b class="nc">&nbsp;          _tmpName = _stmt.getText(_columnIndexOfName)</b>
+<b class="nc">&nbsp;          val _tmpPhone: String</b>
+<b class="nc">&nbsp;          _tmpPhone = _stmt.getText(_columnIndexOfPhone)</b>
+<b class="nc">&nbsp;          val _tmpComplemento: String</b>
+<b class="nc">&nbsp;          _tmpComplemento = _stmt.getText(_columnIndexOfComplemento)</b>
+<b class="nc">&nbsp;          val _tmpCep: String</b>
+<b class="nc">&nbsp;          _tmpCep = _stmt.getText(_columnIndexOfCep)</b>
+<b class="nc">&nbsp;          val _tmpLocalidade: String</b>
+<b class="nc">&nbsp;          _tmpLocalidade = _stmt.getText(_columnIndexOfLocalidade)</b>
+<b class="nc">&nbsp;          val _tmpBairro: String</b>
+<b class="nc">&nbsp;          _tmpBairro = _stmt.getText(_columnIndexOfBairro)</b>
+<b class="nc">&nbsp;          val _tmpEstado: String</b>
+<b class="nc">&nbsp;          _tmpEstado = _stmt.getText(_columnIndexOfEstado)</b>
+<b class="nc">&nbsp;          val _tmpLogradouro: String</b>
+<b class="nc">&nbsp;          _tmpLogradouro = _stmt.getText(_columnIndexOfLogradouro)</b>
+<b class="nc">&nbsp;          _item =</b>
+<b class="nc">&nbsp;              ContactEntity(_tmpId,_tmpName,_tmpPhone,_tmpComplemento,_tmpCep,_tmpLocalidade,_tmpBairro,_tmpEstado,_tmpLogradouro)</b>
+<b class="nc">&nbsp;          _result.add(_item)</b>
+&nbsp;        }
+<b class="nc">&nbsp;        _result</b>
+&nbsp;      } finally {
+<b class="nc">&nbsp;        _stmt.close()</b>
+&nbsp;      }
+&nbsp;    }
+&nbsp;  }
+&nbsp;
+&nbsp;  public override suspend fun getContactByPhone(phone: String): ContactEntity? {
+<b class="nc">&nbsp;    val _sql: String = &quot;SELECT * FROM contacts WHERE phone = ? LIMIT 1&quot;</b>
+<b class="nc">&nbsp;    return performSuspending(__db, true, false) { _connection -&gt;</b>
+<b class="nc">&nbsp;      val _stmt: SQLiteStatement = _connection.prepare(_sql)</b>
+&nbsp;      try {
+<b class="nc">&nbsp;        var _argIndex: Int = 1</b>
+<b class="nc">&nbsp;        _stmt.bindText(_argIndex, phone)</b>
+<b class="nc">&nbsp;        val _columnIndexOfId: Int = getColumnIndexOrThrow(_stmt, &quot;id&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfName: Int = getColumnIndexOrThrow(_stmt, &quot;name&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfPhone: Int = getColumnIndexOrThrow(_stmt, &quot;phone&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfComplemento: Int = getColumnIndexOrThrow(_stmt, &quot;complemento&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfCep: Int = getColumnIndexOrThrow(_stmt, &quot;cep&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLocalidade: Int = getColumnIndexOrThrow(_stmt, &quot;localidade&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfBairro: Int = getColumnIndexOrThrow(_stmt, &quot;bairro&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfEstado: Int = getColumnIndexOrThrow(_stmt, &quot;estado&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLogradouro: Int = getColumnIndexOrThrow(_stmt, &quot;logradouro&quot;)</b>
+<b class="nc">&nbsp;        val _result: ContactEntity?</b>
+<b class="nc">&nbsp;        if (_stmt.step()) {</b>
+<b class="nc">&nbsp;          val _tmpId: Int</b>
+<b class="nc">&nbsp;          _tmpId = _stmt.getLong(_columnIndexOfId).toInt()</b>
+<b class="nc">&nbsp;          val _tmpName: String</b>
+<b class="nc">&nbsp;          _tmpName = _stmt.getText(_columnIndexOfName)</b>
+<b class="nc">&nbsp;          val _tmpPhone: String</b>
+<b class="nc">&nbsp;          _tmpPhone = _stmt.getText(_columnIndexOfPhone)</b>
+<b class="nc">&nbsp;          val _tmpComplemento: String</b>
+<b class="nc">&nbsp;          _tmpComplemento = _stmt.getText(_columnIndexOfComplemento)</b>
+<b class="nc">&nbsp;          val _tmpCep: String</b>
+<b class="nc">&nbsp;          _tmpCep = _stmt.getText(_columnIndexOfCep)</b>
+<b class="nc">&nbsp;          val _tmpLocalidade: String</b>
+<b class="nc">&nbsp;          _tmpLocalidade = _stmt.getText(_columnIndexOfLocalidade)</b>
+<b class="nc">&nbsp;          val _tmpBairro: String</b>
+<b class="nc">&nbsp;          _tmpBairro = _stmt.getText(_columnIndexOfBairro)</b>
+<b class="nc">&nbsp;          val _tmpEstado: String</b>
+<b class="nc">&nbsp;          _tmpEstado = _stmt.getText(_columnIndexOfEstado)</b>
+<b class="nc">&nbsp;          val _tmpLogradouro: String</b>
+<b class="nc">&nbsp;          _tmpLogradouro = _stmt.getText(_columnIndexOfLogradouro)</b>
+<b class="nc">&nbsp;          _result =</b>
+<b class="nc">&nbsp;              ContactEntity(_tmpId,_tmpName,_tmpPhone,_tmpComplemento,_tmpCep,_tmpLocalidade,_tmpBairro,_tmpEstado,_tmpLogradouro)</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;          _result = null</b>
+&nbsp;        }
+<b class="nc">&nbsp;        _result</b>
+&nbsp;      } finally {
+<b class="nc">&nbsp;        _stmt.close()</b>
+&nbsp;      }
+&nbsp;    }
+&nbsp;  }
+&nbsp;
+&nbsp;  public override fun getContactById(id: Int): Flow&lt;ContactEntity?&gt; {
+<b class="nc">&nbsp;    val _sql: String = &quot;SELECT * FROM contacts WHERE id = ?&quot;</b>
+<b class="nc">&nbsp;    return createFlow(__db, false, arrayOf(&quot;contacts&quot;)) { _connection -&gt;</b>
+<b class="nc">&nbsp;      val _stmt: SQLiteStatement = _connection.prepare(_sql)</b>
+&nbsp;      try {
+<b class="nc">&nbsp;        var _argIndex: Int = 1</b>
+<b class="nc">&nbsp;        _stmt.bindLong(_argIndex, id.toLong())</b>
+<b class="nc">&nbsp;        val _columnIndexOfId: Int = getColumnIndexOrThrow(_stmt, &quot;id&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfName: Int = getColumnIndexOrThrow(_stmt, &quot;name&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfPhone: Int = getColumnIndexOrThrow(_stmt, &quot;phone&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfComplemento: Int = getColumnIndexOrThrow(_stmt, &quot;complemento&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfCep: Int = getColumnIndexOrThrow(_stmt, &quot;cep&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLocalidade: Int = getColumnIndexOrThrow(_stmt, &quot;localidade&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfBairro: Int = getColumnIndexOrThrow(_stmt, &quot;bairro&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfEstado: Int = getColumnIndexOrThrow(_stmt, &quot;estado&quot;)</b>
+<b class="nc">&nbsp;        val _columnIndexOfLogradouro: Int = getColumnIndexOrThrow(_stmt, &quot;logradouro&quot;)</b>
+<b class="nc">&nbsp;        val _result: ContactEntity?</b>
+<b class="nc">&nbsp;        if (_stmt.step()) {</b>
+<b class="nc">&nbsp;          val _tmpId: Int</b>
+<b class="nc">&nbsp;          _tmpId = _stmt.getLong(_columnIndexOfId).toInt()</b>
+<b class="nc">&nbsp;          val _tmpName: String</b>
+<b class="nc">&nbsp;          _tmpName = _stmt.getText(_columnIndexOfName)</b>
+<b class="nc">&nbsp;          val _tmpPhone: String</b>
+<b class="nc">&nbsp;          _tmpPhone = _stmt.getText(_columnIndexOfPhone)</b>
+<b class="nc">&nbsp;          val _tmpComplemento: String</b>
+<b class="nc">&nbsp;          _tmpComplemento = _stmt.getText(_columnIndexOfComplemento)</b>
+<b class="nc">&nbsp;          val _tmpCep: String</b>
+<b class="nc">&nbsp;          _tmpCep = _stmt.getText(_columnIndexOfCep)</b>
+<b class="nc">&nbsp;          val _tmpLocalidade: String</b>
+<b class="nc">&nbsp;          _tmpLocalidade = _stmt.getText(_columnIndexOfLocalidade)</b>
+<b class="nc">&nbsp;          val _tmpBairro: String</b>
+<b class="nc">&nbsp;          _tmpBairro = _stmt.getText(_columnIndexOfBairro)</b>
+<b class="nc">&nbsp;          val _tmpEstado: String</b>
+<b class="nc">&nbsp;          _tmpEstado = _stmt.getText(_columnIndexOfEstado)</b>
+<b class="nc">&nbsp;          val _tmpLogradouro: String</b>
+<b class="nc">&nbsp;          _tmpLogradouro = _stmt.getText(_columnIndexOfLogradouro)</b>
+<b class="nc">&nbsp;          _result =</b>
+<b class="nc">&nbsp;              ContactEntity(_tmpId,_tmpName,_tmpPhone,_tmpComplemento,_tmpCep,_tmpLocalidade,_tmpBairro,_tmpEstado,_tmpLogradouro)</b>
+&nbsp;        } else {
+<b class="nc">&nbsp;          _result = null</b>
+&nbsp;        }
+<b class="nc">&nbsp;        _result</b>
+&nbsp;      } finally {
+<b class="nc">&nbsp;        _stmt.close()</b>
+&nbsp;      }
+&nbsp;    }
+&nbsp;  }
+&nbsp;
+&nbsp;  public companion object {
+<b class="nc">&nbsp;    public fun getRequiredConverters(): List&lt;KClass&lt;*&gt;&gt; = emptyList()</b>
+&nbsp;  }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>

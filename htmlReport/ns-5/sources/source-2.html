@@ -1,0 +1,99 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+  <title>Coverage Report > ContactDao</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao</a>
+</div>
+
+<h1>Coverage Summary for Class: ContactDao (com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+</tr>
+<tr>
+  <td class="name">ContactDao</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao
+&nbsp;
+&nbsp;import androidx.room.Dao
+&nbsp;import androidx.room.Delete
+&nbsp;import androidx.room.Insert
+&nbsp;import androidx.room.Query
+&nbsp;import androidx.room.Update
+&nbsp;import com.junior.contatosjetpackmvvmhilt.data.datasource.local.ContactEntity
+&nbsp;import kotlinx.coroutines.flow.Flow
+&nbsp;
+&nbsp;@Dao
+&nbsp;interface ContactDao {
+&nbsp;
+&nbsp;    @Query(&quot;SELECT * FROM contacts ORDER BY id ASC&quot;)
+&nbsp;    fun getAllContacts(): Flow&lt;List&lt;ContactEntity&gt;&gt;
+&nbsp;
+&nbsp;    @Insert
+&nbsp;    suspend fun insert(contact: ContactEntity)
+&nbsp;
+&nbsp;    @Update
+&nbsp;    suspend fun update(contact: ContactEntity)
+&nbsp;
+&nbsp;    @Delete
+&nbsp;    suspend fun delete(contact: ContactEntity)
+&nbsp;
+&nbsp;    @Query(&quot;SELECT * FROM contacts WHERE phone = :phone LIMIT 1&quot;)
+&nbsp;    suspend fun getContactByPhone(phone: String): ContactEntity?
+&nbsp;
+&nbsp;    @Query(&quot;SELECT * FROM contacts WHERE id = :id&quot;)
+&nbsp;    fun getContactById(id: Int): Flow&lt;ContactEntity?&gt;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2025-09-06 19:00</div>
+</div>
+</body>
+</html>
