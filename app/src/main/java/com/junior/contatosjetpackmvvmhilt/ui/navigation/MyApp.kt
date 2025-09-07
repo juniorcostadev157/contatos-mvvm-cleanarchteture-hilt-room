@@ -1,9 +1,8 @@
-package com.junior.contatosjetpackmvvmhilt
+package com.junior.contatosjetpackmvvmhilt.ui.navigation
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
-import com.junior.contatosjetpackmvvmhilt.ui.navigation.AppNavHost
 
 @Composable
 fun MyApp(){
