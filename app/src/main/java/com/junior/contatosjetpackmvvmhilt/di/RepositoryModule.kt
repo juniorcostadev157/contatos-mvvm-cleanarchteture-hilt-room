@@ -1,8 +1,8 @@
 package com.junior.contatosjetpackmvvmhilt.di
 
 import com.junior.contatosjetpackmvvmhilt.data.repository.local.ContactRepositoryImpl
-import com.junior.contatosjetpackmvvmhilt.data.repository.local.ContactRepository
-import com.junior.contatosjetpackmvvmhilt.data.repository.remote.CepRepository
+import com.junior.contatosjetpackmvvmhilt.domain.repository.local.ContactRepository
+import com.junior.contatosjetpackmvvmhilt.domain.repository.remote.CepRepository
 import com.junior.contatosjetpackmvvmhilt.data.repository.remote.CepRepositoryImpl
 import dagger.Binds
 import dagger.Module

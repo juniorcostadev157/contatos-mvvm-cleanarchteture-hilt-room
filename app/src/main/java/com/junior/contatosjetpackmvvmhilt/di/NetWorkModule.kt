@@ -2,7 +2,7 @@ package com.junior.contatosjetpackmvvmhilt.di
 
 import com.junior.contatosjetpackmvvmhilt.core.contants.Constants
 import com.junior.contatosjetpackmvvmhilt.data.datasource.remote.CepApiService
-import com.junior.contatosjetpackmvvmhilt.data.repository.remote.CepRepository
+import com.junior.contatosjetpackmvvmhilt.domain.repository.remote.CepRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
