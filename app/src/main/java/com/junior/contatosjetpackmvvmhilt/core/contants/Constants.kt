@@ -7,7 +7,7 @@ class Constants {
         const val MESSAGE_SUCCESS_UPDATE = "Contato atualizado com sucesso"
         const val MESSAGE_SUCCESS_DELETE = "Contato deletado com sucesso"
         const val MESSAGE_EMPTY_FIELDS = "Preencha todos os campos"
-        const val MESSAGE_EXISTS_CONTACT = "Contato já existe"
+        const val MESSAGE_EXISTS_CONTACT = "Contato já cadastrado no banco de dados"
         const val MESSAGE_ERROR_SEARCH_CEP = "Erro ao buscar CEP"
     }
 
