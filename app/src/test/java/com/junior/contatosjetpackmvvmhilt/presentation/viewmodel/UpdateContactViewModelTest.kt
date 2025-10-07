@@ -91,7 +91,7 @@ class UpdateContactViewModelTest {
 
         vm.eventFlow.test {
             vm.updateContact(contact)
-            assertEquals(Constants.MESSAGE.MESSAGE_EMPTY_FIELDS, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_EMPTY_FIELDS, awaitItem())
             coVerify(exactly = 0) { updateContactUseCase(contact) }
         }
     }
@@ -104,7 +104,7 @@ class UpdateContactViewModelTest {
 
         vm.eventFlow.test {
             vm.updateContact(contact)
-            assertEquals(Constants.MESSAGE.MESSAGE_EXISTS_CONTACT, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_EXISTS_CONTACT, awaitItem())
             coVerify(exactly = 0) { updateContactUseCase(contact) }
         }
     }
@@ -118,7 +118,7 @@ class UpdateContactViewModelTest {
 
         vm.eventFlow.test {
             vm.updateContact(contact)
-            assertEquals(Constants.MESSAGE.MESSAGE_SUCCESS_UPDATE, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_SUCCESS_UPDATE, awaitItem())
             coVerify(exactly = 1) { updateContactUseCase(contact) }
         }
     }

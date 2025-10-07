@@ -79,16 +79,16 @@ fun UpdateContactScreen(
     LaunchedEffect(true) {
         eventFlow.collect { event->
             when(event){
-                Constants.MESSAGE.MESSAGE_SUCCESS_UPDATE -> {
+                Constants.Message.MESSAGE_SUCCESS_UPDATE -> {
                     Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
                     onUpdateSuccess()
                 }
-                Constants.MESSAGE.MESSAGE_EMPTY_FIELDS->{
+                Constants.Message.MESSAGE_EMPTY_FIELDS->{
                     Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
 
                 }
 
-                Constants.MESSAGE.MESSAGE_EXISTS_CONTACT->{
+                Constants.Message.MESSAGE_EXISTS_CONTACT->{
                     Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
                 }
             }
@@ -121,7 +121,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = nome,
                     onValueChange = {viewModelUpdate.setNome(it)},
-                    label = {Text(Constants.TEXT_FIELD.NAME)},
+                    label = {Text(Constants.TextField.NAME)},
                     modifier = Modifier.fillMaxWidth(),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = NavyBlue,
@@ -144,7 +144,7 @@ fun UpdateContactScreen(
                         val onlyDigits = input.filter { it.isDigit() }
                         viewModelUpdate.setPhone(onlyDigits)
                                     },
-                    label = {Text(Constants.TEXT_FIELD.PHONE)},
+                    label = {Text(Constants.TextField.PHONE)},
                     modifier = Modifier.fillMaxWidth(),
                     keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
                     visualTransformation = PhoneVisualTransformation(),
@@ -166,7 +166,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = cep,
                     onValueChange = {viewModelUpdate.setCep(it)},
-                    label = {Text(Constants.TEXT_FIELD.CEP)},
+                    label = {Text(Constants.TextField.CEP)},
                     modifier = Modifier.fillMaxWidth(),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = NavyBlue,
@@ -185,7 +185,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = complemento,
                     onValueChange = {viewModelUpdate.setComplemento(it)},
-                    label = { Text(Constants.TEXT_FIELD.COMPLEMENTO)},
+                    label = { Text(Constants.TextField.COMPLEMENTO)},
                     modifier = Modifier.fillMaxWidth(),
                     colors = TextFieldDefaults.colors(
                         focusedTextColor = NavyBlue,
@@ -203,7 +203,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = logradouro,
                     onValueChange = {viewModelUpdate.setLogradouro(it)},
-                    label = { Text(Constants.TEXT_FIELD.LOGRADOURO)},
+                    label = { Text(Constants.TextField.LOGRADOURO)},
                     modifier = Modifier.fillMaxWidth(),
                     readOnly = true,
                     colors = TextFieldDefaults.colors(
@@ -225,7 +225,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = bairro,
                     onValueChange = {viewModelUpdate.setBairro(it)},
-                    label = { Text(Constants.TEXT_FIELD.BAIRRO)},
+                    label = { Text(Constants.TextField.BAIRRO)},
                     modifier = Modifier.fillMaxWidth(),
                     readOnly = true,
                     colors = TextFieldDefaults.colors(
@@ -244,7 +244,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = localidade,
                     onValueChange = {viewModelUpdate.setLocalidade(it)},
-                    label = { Text(Constants.TEXT_FIELD.LOCALIDADE)},
+                    label = { Text(Constants.TextField.LOCALIDADE)},
                     modifier = Modifier.fillMaxWidth(),
                     readOnly = true,
                     colors = TextFieldDefaults.colors(
@@ -263,7 +263,7 @@ fun UpdateContactScreen(
                 OutlinedTextField(
                     value = estado,
                     onValueChange = {viewModelUpdate.setEstado(it)},
-                    label = { Text(Constants.TEXT_FIELD.ESTADO)},
+                    label = { Text(Constants.TextField.ESTADO)},
                     modifier = Modifier.fillMaxWidth(),
                     readOnly = true,
                     colors = TextFieldDefaults.colors(

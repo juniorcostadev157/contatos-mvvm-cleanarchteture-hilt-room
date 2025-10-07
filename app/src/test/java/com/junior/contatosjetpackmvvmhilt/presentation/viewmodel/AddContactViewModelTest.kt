@@ -58,7 +58,7 @@ class AddContactViewModelTest {
         vm.eventFlow.test {
             vm.insertContact(contact)
 
-            assertEquals(Constants.MESSAGE.MESSAGE_SUCCESS_INSERT, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_SUCCESS_INSERT, awaitItem())
             coVerify(exactly = 1) { insertContactsUseCase(contact) }
             cancelAndIgnoreRemainingEvents()
         }
@@ -74,7 +74,7 @@ class AddContactViewModelTest {
         vm.eventFlow.test {
             vm.insertContact(contact)
 
-            assertEquals(Constants.MESSAGE.MESSAGE_EMPTY_FIELDS, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_EMPTY_FIELDS, awaitItem())
             coVerify(exactly = 0) { insertContactsUseCase(any()) }
             cancelAndIgnoreRemainingEvents()
         }
@@ -90,7 +90,7 @@ class AddContactViewModelTest {
         vm.eventFlow.test {
             vm.insertContact(contact)
 
-            assertEquals(Constants.MESSAGE.MESSAGE_EXISTS_CONTACT, awaitItem())
+            assertEquals(Constants.Message.MESSAGE_EXISTS_CONTACT, awaitItem())
             coVerify(exactly = 0) { insertContactsUseCase(any()) }
             cancelAndIgnoreRemainingEvents()
         }

@@ -2,7 +2,7 @@ package com.junior.contatosjetpackmvvmhilt.core.contants
 
 class Constants {
 
-    object MESSAGE {
+    object Message {
         const val MESSAGE_SUCCESS_INSERT = "Contato inserido com sucesso"
         const val MESSAGE_SUCCESS_UPDATE = "Contato atualizado com sucesso"
         const val MESSAGE_SUCCESS_DELETE = "Contato deletado com sucesso"
@@ -11,7 +11,7 @@ class Constants {
         const val MESSAGE_ERROR_SEARCH_CEP = "Erro ao buscar CEP"
     }
 
-    object TEXT_FIELD {
+    object TextField {
         const val NAME = "Nome"
         const val PHONE = "Telefone"
         const val COMPLEMENTO = "Complemento"
