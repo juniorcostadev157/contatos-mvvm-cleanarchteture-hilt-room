@@ -1,8 +1,8 @@
 package com.junior.contatosjetpackmvvmhilt.data.repository.local
 
 import com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao.ContactDao
-import com.junior.contatosjetpackmvvmhilt.domain.model.mapper.toDomain
-import com.junior.contatosjetpackmvvmhilt.domain.model.mapper.toEntity
+import com.junior.contatosjetpackmvvmhilt.domain.model.toDomain
+import com.junior.contatosjetpackmvvmhilt.domain.model.toEntity
 import com.junior.contatosjetpackmvvmhilt.domain.model.Contact
 import com.junior.contatosjetpackmvvmhilt.domain.repository.local.ContactRepository
 import kotlinx.coroutines.flow.Flow
