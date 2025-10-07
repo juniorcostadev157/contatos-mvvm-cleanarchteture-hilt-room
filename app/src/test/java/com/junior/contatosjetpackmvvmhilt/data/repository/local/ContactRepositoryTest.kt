@@ -1,6 +1,6 @@
 import com.junior.contatosjetpackmvvmhilt.data.datasource.local.dao.ContactDao
 import com.junior.contatosjetpackmvvmhilt.domain.model.Contact
-import com.junior.contatosjetpackmvvmhilt.domain.model.mapper.toEntity
+import com.junior.contatosjetpackmvvmhilt.domain.model.toEntity
 import com.junior.contatosjetpackmvvmhilt.data.repository.local.ContactRepositoryImpl
 import io.mockk.coEvery
 import io.mockk.coVerify

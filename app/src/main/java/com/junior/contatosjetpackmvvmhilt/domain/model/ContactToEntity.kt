@@ -1,7 +1,6 @@
-package com.junior.contatosjetpackmvvmhilt.domain.model.mapper
+package com.junior.contatosjetpackmvvmhilt.domain.model
 
 import com.junior.contatosjetpackmvvmhilt.data.datasource.local.ContactEntity
-import com.junior.contatosjetpackmvvmhilt.domain.model.Contact
 
 fun Contact.toEntity(): ContactEntity{
     return ContactEntity(
