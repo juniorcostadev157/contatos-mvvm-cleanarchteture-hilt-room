@@ -74,7 +74,7 @@ class UpdateContactViewModel @Inject constructor(
                 _localidade.value = response.localidade ?: ""
                 _estado.value = response.estado ?: ""
             }catch (e: Exception){
-                _eventFlow.emit(e.message ?: Constants.MESSAGE.MESSAGE_ERROR_SEARCH_CEP)
+                _eventFlow.emit(e.message ?: Constants.Message.MESSAGE_ERROR_SEARCH_CEP)
             }
         }
     }
@@ -83,14 +83,14 @@ class UpdateContactViewModel @Inject constructor(
         viewModelScope.launch {
             when(validateContactUseCase(contact, isUpdate = true)){
                 ValidationResult.EmptyField -> {
-                    _eventFlow.emit(Constants.MESSAGE.MESSAGE_EMPTY_FIELDS)
+                    _eventFlow.emit(Constants.Message.MESSAGE_EMPTY_FIELDS)
                 }
                 ValidationResult.AlreadyExists -> {
-                    _eventFlow.emit(Constants.MESSAGE.MESSAGE_EXISTS_CONTACT)
+                    _eventFlow.emit(Constants.Message.MESSAGE_EXISTS_CONTACT)
                 }
 
                 ValidationResult.Success -> {
-                    _eventFlow.emit(Constants.MESSAGE.MESSAGE_SUCCESS_UPDATE)
+                    _eventFlow.emit(Constants.Message.MESSAGE_SUCCESS_UPDATE)
                     updateContactUseCase(contact)
                 }
             }

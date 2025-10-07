@@ -65,16 +65,16 @@ class AddContactViewModel @Inject constructor(
         viewModelScope.launch {
         when(validateContactUseCase(contact)){
             ValidationResult.EmptyField->{
-                _eventFlow.emit(Constants.MESSAGE.MESSAGE_EMPTY_FIELDS)
+                _eventFlow.emit(Constants.Message.MESSAGE_EMPTY_FIELDS)
             }
 
             ValidationResult.AlreadyExists->{
-                _eventFlow.emit(Constants.MESSAGE.MESSAGE_EXISTS_CONTACT)
+                _eventFlow.emit(Constants.Message.MESSAGE_EXISTS_CONTACT)
             }
 
             ValidationResult.Success->{
                 insertContactsUseCase(contact)
-                _eventFlow.emit(Constants.MESSAGE.MESSAGE_SUCCESS_INSERT)
+                _eventFlow.emit(Constants.Message.MESSAGE_SUCCESS_INSERT)
             }
         }
         }
@@ -90,7 +90,7 @@ class AddContactViewModel @Inject constructor(
                 _localidade.value = response.localidade ?: ""
                 _estado.value = response.estado ?: ""
             }catch (e: Exception){
-                _eventFlow.emit(e.message ?: Constants.MESSAGE.MESSAGE_ERROR_SEARCH_CEP)
+                _eventFlow.emit(e.message ?: Constants.Message.MESSAGE_ERROR_SEARCH_CEP)
             }
         }
     }

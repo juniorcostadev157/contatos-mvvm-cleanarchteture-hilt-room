@@ -47,16 +47,16 @@ fun AddContactScreen(onBackClick: () -> Unit, viewModel: AddContactViewModel = h
     LaunchedEffect(true) {
         eventFlow.collect { event->
            when(event){
-               Constants.MESSAGE.MESSAGE_SUCCESS_INSERT -> {
+               Constants.Message.MESSAGE_SUCCESS_INSERT -> {
                    Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
                    onBackClick()
                }
 
-               Constants.MESSAGE.MESSAGE_EMPTY_FIELDS->{
+               Constants.Message.MESSAGE_EMPTY_FIELDS->{
                    Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
                }
 
-               Constants.MESSAGE.MESSAGE_EXISTS_CONTACT->{
+               Constants.Message.MESSAGE_EXISTS_CONTACT->{
                    Toast.makeText(context, event, Toast.LENGTH_SHORT).show()
                }
 

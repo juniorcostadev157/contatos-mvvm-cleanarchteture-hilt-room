@@ -133,7 +133,7 @@ fun DetailsContactScreen(contactId: Int, onEditClick: () -> Unit, onDeleteSucces
             uiState.contact?.let { viewModel.deleteContact(it) }
             showDialog = false
             onDeleteSuccess()
-            Toast.makeText(context, Constants.MESSAGE.MESSAGE_SUCCESS_DELETE, Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, Constants.Message.MESSAGE_SUCCESS_DELETE, Toast.LENGTH_SHORT).show()
         }, onDismiss = {showDialog = false})
     }
 
